@@ -29,8 +29,15 @@ const options = {
         );
       }
 
-      return <p>{children}</p>;
+      return <p className="my-4">{children}</p>;
     },
+
+    [BLOCKS.UL_LIST]: (_, children) => (
+      <ul className="list-disc">{children}</ul>
+    ),
+    [BLOCKS.OL_LIST]: (_, children) => (
+      <ol className="list-decimal">{children}</ol>
+    ),
 
     [INLINES.ENTRY_HYPERLINK]: (node) => {
       if (node.data.target.sys.contentType.sys.id === "post") {
@@ -72,7 +79,7 @@ const options = {
           height={node.data.target.fields.file.details.image.height}
           width={node.data.target.fields.file.details.image.width}
           alt={node.data.target.fields.title}
-          className="w-20 h-20"
+          className="w-40 h-40"
         />
       );
     },

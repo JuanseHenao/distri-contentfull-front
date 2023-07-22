@@ -24,7 +24,7 @@ function BlogPage({ entries }) {
       <div className="flex justify-center">
         {entries.map((entry) => (
           <div
-            className="max-w-lg p-5 mx-auto my-10 bg-white rounded-lg shadow-md"
+            className="w-5/6 p-5 m-10 bg-white rounded-lg shadow-md"
             key={entry.sys.id}
           >
             <h2 className="mt-3 text-2xl font-semibold text-center">
@@ -33,7 +33,7 @@ function BlogPage({ entries }) {
             <p className="mt-1 text-center text-gray-600">
               {entry.fields.autor}
             </p>
-            <div className="mt-5">
+            <div className="p-3 mt-3">
               <RichText content={entry.fields.body} />
             </div>
           </div>
